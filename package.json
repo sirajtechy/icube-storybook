@@ -1,6 +1,6 @@
 {
   "name": "@sirajtechy/icube-storybook",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "cross-env BABEL_ENV=production babel src -d dist",
+    "build": "cross-env BABEL_ENV=production babel src -d dist --copy-files",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
