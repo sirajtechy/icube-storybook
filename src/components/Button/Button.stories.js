@@ -26,9 +26,9 @@ Secondary.args = {
   type: 'secondary'
 };
 
-export const BorderLess = Template.bind({});
-BorderLess.args = {
-  type: 'borderLess'
+export const Tertiary = Template.bind({});
+Tertiary.args = {
+  type: 'tertiary'
 };
 
 export const Success = Template.bind({});

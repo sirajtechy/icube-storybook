@@ -1,4 +1,4 @@
-.button {
+.btn {
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
   border: 0;
@@ -7,168 +7,168 @@
   display: inline-block;
   line-height: 1;
 }
-.button--primary {
+.btn--primary {
   color: white;
   background-color: #0277bd;
 }
-.button--primary:hover {
+.btn--primary:hover {
   background-color: #0570af;
 }
-.button--primary:disabled {
+.btn--primary:disabled {
   background-color: rgba(2, 119, 189, 0.5);
 }
 
-.button--secondary {
+.btn--secondary {
   color: white;
   background-color: #b7bec6;
 }
-.button--secondary:hover {
+.btn--secondary:hover {
   background-color: #858c94;
 }
-.button--secondary:disabled {
+.btn--secondary:disabled {
   background-color: rgba(144, 152, 161, 0.5);
 }
 
-.button--borderLess {
+.btn--tertiary {
   color: #0277bd;
   background-color: white;
 }
-.button--borderLess:hover {
+.btn--tertiary:hover {
   color: #0570af;
 }
-.button--borderLess:disabled {
+.btn--tertiary:disabled {
   color: rgba(2, 119, 189, 0.5);
 }
 
-.button--success {
+.btn--success {
   color: white;
   background-color: #28a745;
 }
-.button--success:hover {
+.btn--success:hover {
   background-color: #208738;
 }
-.button--success:disabled {
+.btn--success:disabled {
   background-color: rgb(40, 167, 69, 0.5);
 }
 
-.button--alert {
+.btn--alert {
   color: white;
   background-color: #dc3545;
 }
-.button--alert:hover {
+.btn--alert:hover {
   background-color: #d82537;
 }
-.button--alert:disabled {
+.btn--alert:disabled {
   background-color: rgb(220, 53, 69, 0.5);
 }
 
-.button--warning {
+.btn--warning {
   color: white;
   background-color: #ffc107;
 }
-.button--warning:hover {
+.btn--warning:hover {
   background-color: #f2b600;
 }
-.button--warning:disabled {
+.btn--warning:disabled {
   background-color: rgb(255, 193, 7, 0.5);
 }
 
-.button--small {
+.btn--small {
   font-size: 12px;
   padding: 10px 16px;
 }
-.button--medium {
+.btn--medium {
   font-size: 14px;
   padding: 11px 20px;
 }
-.button--large {
+.btn--large {
   font-size: 16px;
   padding: 12px 24px;
 }
 
-.button--fill {
+.btn--fill {
   border-radius: 5px;
 }
-.button--rounded {
+.btn--rounded {
   border-radius: 20px;
 }
 
-.button--primary.button--ghost {
+.btn--primary.btn--ghost {
   border: 2px solid;
   border-color: #0277bd;
   border-radius: 5px;
   color: #0277bd;
   background-color: white;
 }
-.button--primary.button--ghost:hover {
+.btn--primary.btn--ghost:hover {
   border-color: #0570af;
   color: #0570af;
 }
-.button--primary.button--ghost:disabled {
+.btn--primary.btn--ghost:disabled {
   border-color: rgba(2, 119, 189, 0.5);
   color: rgba(2, 119, 189, 0.5);
 }
 
-.button--secondary.button--ghost {
+.btn--secondary.btn--ghost {
   border: 2px solid;
   border-color: #b7bec6;
   border-radius: 5px;
   color: #b7bec6;
   background-color: white;
 }
-.button--secondary.button--ghost:hover {
+.btn--secondary.btn--ghost:hover {
   border-color: #858c94;
   color: #858c94;
 }
-.button--secondary.button--ghost:disabled {
+.btn--secondary.btn--ghost:disabled {
   border-color: rgba(144, 152, 161, 0.5);
   color: rgba(144, 152, 161, 0.5);
 }
 
-.button--success.button--ghost {
+.btn--success.btn--ghost {
   border: 2px solid;
   border-color: #28a745;
   border-radius: 5px;
   color: #28a745;
   background-color: white;
 }
-.button--success.button--ghost:hover {
+.btn--success.btn--ghost:hover {
   border-color: #208738;
   color: #208738;
 }
-.button--success.button--ghost:disabled {
+.btn--success.btn--ghost:disabled {
   border-color: rgb(40, 167, 69, 0.5);
   color: rgb(40, 167, 69, 0.5);
 }
 
-.button--alert.button--ghost {
+.btn--alert.btn--ghost {
   border: 2px solid;
   border-color: #dc3545;
   border-radius: 5px;
   color: #dc3545;
   background-color: white;
 }
-.button--alert.button--ghost:hover {
+.btn--alert.btn--ghost:hover {
   border-color: #d82537;
   color: #d82537;
 }
-.button--alert.button--ghost:disabled {
+.btn--alert.btn--ghost:disabled {
   border-color: rgb(220, 53, 69, 0.5);
   color: rgb(220, 53, 69, 0.5);
 }
 
-.button--warning.button--ghost {
+.btn--warning.btn--ghost {
   border: 2px solid;
   border-color: #ffc107;
   border-radius: 5px;
   color: #ffc107;
   background-color: white;
 }
-.button--warning.button--ghost:hover {
+.btn--warning.btn--ghost:hover {
   border-color: #f2b600;
   color: #f2b600;
 }
-.button--warning.button--ghost:disabled {
+.btn--warning.btn--ghost:disabled {
   border-color: rgb(255, 193, 7, 0.5);
   color: rgb(255, 193, 7, 0.5);
 }

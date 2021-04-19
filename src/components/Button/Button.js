@@ -9,31 +9,31 @@ export const Button = ({ type, backgroundColor, size, design, label, ...props })
   let mode;
   switch (type) {
     case "primary":
-      mode = "button--primary";
+      mode = "btn--primary";
       break;
     case "secondary":
-      mode = "button--secondary";
+      mode = "btn--secondary";
       break;
-    case "borderLess":
-      mode = "button--borderLess";
+    case "tertiary":
+      mode = "btn--tertiary";
       break;
     case "success":
-      mode = "button--success";
+      mode = "btn--success";
       break;
     case "alert":
-      mode = "button--alert";
+      mode = "btn--alert";
       break;
     case "warning":
-      mode = "button--warning";
+      mode = "btn--warning";
       break;
     default:
-      mode = "button--primary";
+      mode = "btn--primary";
       break;
   }
   return (
     <button
       type="button"
-      className={["button", `button--${size}`, `button--${design}`, mode].join(" ")}
+      className={["btn", `btn--${size}`, `btn--${design}`, mode].join(" ")}
       style={backgroundColor && { backgroundColor }}
       disabled={props.disabled}
       {...props}
