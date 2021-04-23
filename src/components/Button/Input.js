@@ -93,7 +93,7 @@ export const Input = (props) => {
     disabled: PropTypes.bool,
     /**
     /**
-    * Optional click handler
+    * Optional onChange handler
     */
-    onClick: PropTypes.func,
+    onChange: PropTypes.func.isRequired,
   };
