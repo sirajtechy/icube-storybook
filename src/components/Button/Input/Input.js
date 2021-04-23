@@ -7,7 +7,7 @@ export const Input = (props) => {
       let rendercomponet ; 
               switch(props.type){
                     case "text" : 
-                       rendercomponet =  <div className="floating-label">
+                       rendercomponet = <div className={`${props.Borderless ?'disableBorder':'enableBorder'}`}> <div className="floating-label">
                        <input className={`floating-input ${props.error ? 'InputErrorMsg':''}`}style={props.style} id={props.id} type= {props.type} name={props.name}  
                        value ={props.value} onChange={props.onChange} maxLength={props.maxlength} size={props.size} disabled={props.disabled} placeholder={props.placeholder} />
                        <span className="highlight"></span>
@@ -16,9 +16,10 @@ export const Input = (props) => {
                         <div style={{paddingTop:10,backgroundColor:'none',color:'#ed4545',fontSize:13}}>{props.Errormessage}</div>
                       )}
                       </div>
+                      </div>
                        break;
                     case "DropDown": 
-                       rendercomponet = <div className="floating-label">
+                       rendercomponet =  <div className={`${props.Borderless ?'disableBorder':'enableBorder'}`}>  <div className="floating-label">
                         <select
                        name={props.name}
                        className={`floating-select ${props.error ? 'InputErrorMsg':''} ${props.className}`}
@@ -40,9 +41,10 @@ export const Input = (props) => {
                         <div style={{paddingTop:10,backgroundColor:'none',color:'#ed4545',fontSize:13}}>{props.Errormessage}</div>
                       )}
                      </div>
+                     </div>
                        break;
                     default:
-                    rendercomponet = <div className="floating-label">
+                    rendercomponet = <div className={`${props.Borderless ?'disableBorder':'enableBorder'}`}>  <div className="floating-label">
                     <input  className={`floating-input ${props.error ? 'InputErrorMsg':''}`} style={props.style} id={props.id} type= {props.type} name={props.name}  
                     value ={props.value} onChange={props.onChange} maxLength={props.maxlength} size={props.size} disabled={props.disabled} placeholder={props.placeholder}/>
                     <span className="highlight"></span>
@@ -50,6 +52,7 @@ export const Input = (props) => {
                     {props.error && (
                      <div style={{paddingTop:10,backgroundColor:'none',color:'#ed4545',fontSize:13}}>{props.Errormessage}</div>
                    )}
+                   </div>
                    </div>
               }
           
@@ -113,8 +116,5 @@ export const Input = (props) => {
     * Optional onChange handler
     */
     onChange: PropTypes.func.isRequired,
-     /**
-    * Dropdown Example Values
-    */
-      options: PropTypes.array
+    
   };
