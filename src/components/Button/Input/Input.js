@@ -1,23 +1,30 @@
-import React  from 'react';
+import React ,{useEffect} from 'react';
 import PropTypes from "prop-types";
+import "./Input.css";
 
 export const Input = (props) => {
+
       let rendercomponet ; 
-    
               switch(props.type){
                     case "text" : 
-                       rendercomponet = <input style={props.style} id={props.id} type= {props.type} name={props.name}  className={props.name}
-                       value ={props.value} onChange={props.onChange} maxlength={props.maxlength} {...props} size={props.size} disabled={props.disabled} placeholder={props.placeholder}/>
+                       rendercomponet =  <div className="floating-label">
+                       <input className={`floating-input ${props.error ? 'InputErrorMsg':''}`}style={props.style} id={props.id} type= {props.type} name={props.name}  
+                       value ={props.value} onChange={props.onChange} maxLength={props.maxlength} size={props.size} disabled={props.disabled} placeholder={props.placeholder} />
+                       <span className="highlight"></span>
+                       <label >{props.label}</label>
+                       {props.error && (
+                        <div style={{paddingTop:10,backgroundColor:'none',color:'#ed4545',fontSize:13}}>{props.Errormessage}</div>
+                      )}
+                      </div>
                        break;
                     case "DropDown": 
-                       rendercomponet =  <select
+                       rendercomponet = <div className="floating-label">
+                        <select
                        name={props.name}
-                       className={props.className}
-                       type={props.type}
+                       className={`floating-select ${props.error ? 'InputErrorMsg':''} ${props.className}`}
                        disabled={props.disabled}
-                       value={props.value}
+                       DropdownValue={props.value}
                        onChange={props.onChange}
-                    
                      >
                        {props.options.map(options => {
                          return (
@@ -27,14 +34,23 @@ export const Input = (props) => {
                          );
                        })}
                      </select>
-                       break;
-                    case "password" : 
-                       rendercomponet = <input type= {props.type} name={props.name} size={props.size}  className={props.name}
-                       value ={props.value} onChange={props.onChange}  maxlength={props.maxlength} disabled={props.disabled} {...props} />
+                     <span className="highlight"></span>
+                     <label>{props.label}</label>
+                     {props.error && (
+                        <div style={{paddingTop:10,backgroundColor:'none',color:'#ed4545',fontSize:13}}>{props.Errormessage}</div>
+                      )}
+                     </div>
                        break;
                     default:
-                    rendercomponet =  <input type= {props.type} size={props.size} name={props.name} disabled={props.disabled}  className={props.name}
-                    value ={props.value} onChange={props.onChange}   maxlength={props.maxlength} {...props} />
+                    rendercomponet = <div className="floating-label">
+                    <input  className={`floating-input ${props.error ? 'InputErrorMsg':''}`} style={props.style} id={props.id} type= {props.type} name={props.name}  
+                    value ={props.value} onChange={props.onChange} maxLength={props.maxlength} size={props.size} disabled={props.disabled} placeholder={props.placeholder}/>
+                    <span className="highlight"></span>
+                    <label>{props.label}</label>
+                    {props.error && (
+                     <div style={{paddingTop:10,backgroundColor:'none',color:'#ed4545',fontSize:13}}>{props.Errormessage}</div>
+                   )}
+                   </div>
               }
           
       
@@ -45,6 +61,7 @@ export const Input = (props) => {
     );
   }
 
+   
   
   Input.propTypes = {
     /**
@@ -96,4 +113,8 @@ export const Input = (props) => {
     * Optional onChange handler
     */
     onChange: PropTypes.func.isRequired,
+     /**
+    * Dropdown Example Values
+    */
+      options: PropTypes.array
   };

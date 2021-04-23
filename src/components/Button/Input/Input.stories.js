@@ -1,6 +1,5 @@
 import React , {useState } from 'react';
 import {Input} from './Input';
-import { action ,storiesOf} from '@storybook/addon-actions';
 
 export default {
     title: 'Form/Input',
@@ -31,12 +30,15 @@ const Template = args => {
   );
 };
 export const  TextBox = Template.bind({});
-TextBox.args = { type: 'text', placeholder: 'placeholder' , id : "id" , name : "name" , className :"className" ,
-value: ''  , style :{backgroundColor:"white"} ,disabled:false , size: 0};
+TextBox.args = { type: 'text', placeholder:" " , id : "id" , name : "name" , className :"" , FlyoverLabel:true,
+value: ''  , style :{backgroundColor:"white"} ,disabled:false , size: 0 , label:"User", error:false,Errormessage:"We are handle error"};
  
 export const Select = Template.bind({});
-Select.args = { type: 'DropDown', placeholder: 'placeholder' , id : "id" , name : "name" , className :"className" ,
-value :"user"  , style :{backgroundColor:"white"} ,  disabled:false  , options : [{
+Select.args = { type: 'DropDown', id : "id" , name : "name" , className :"" , label:"Drop", value:"" , error:false,Errormessage:"We are handle error", style :{backgroundColor:"white"} ,  disabled:false  , options : [
+  {
+  "value":"",
+  "key":""
+},{
     "value": "Alberta",
     "key": "AB"
   },
