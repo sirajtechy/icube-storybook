@@ -1,4 +1,4 @@
-import React ,{useEffect} from 'react';
+import React from 'react';
 import PropTypes from "prop-types";
 import "./Input.css";
 
@@ -9,7 +9,7 @@ export const Input = (props) => {
                     case "text" : 
                        rendercomponet = <div className={`${props.Borderless ?'disableBorder':'enableBorder'}`}> <div className="floating-label">
                        <input className={`floating-input ${props.error ? 'InputErrorMsg':''}`}style={props.style} id={props.id} type= {props.type} name={props.name}  
-                       value ={props.value} onChange={props.onChange} maxLength={props.maxlength} size={props.size} disabled={props.disabled} placeholder={props.placeholder} />
+                       value ={props.value} onBlur={props.onBlur} onChange={props.onChange} maxLength={props.maxlength} size={props.size} disabled={props.disabled} placeholder={props.placeholder} />
                        <span className="highlight"></span>
                        <label >{props.label}</label>
                        {props.error && (
@@ -70,7 +70,7 @@ export const Input = (props) => {
     /**
      * Is this the principal to call the type of Input Textbox Eg: Number 
      */
-    type: PropTypes.string,
+    type: PropTypes.oneOf(["text", "number", "email", "password"]),
     /**
      * What background color to use
      */
@@ -116,5 +116,18 @@ export const Input = (props) => {
     * Optional onChange handler
     */
     onChange: PropTypes.func.isRequired,
-    
+    /**
+    /**
+    *  onBlur handler
+    */
+    onBlur: PropTypes.func,
   };
+
+  Input.defaultProps = {
+    name: "name",
+    placeholder: "",
+    disabled: false,
+    type: "text",
+    // pattern: null
+  };
+ 

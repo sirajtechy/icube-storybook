@@ -21,6 +21,7 @@ const Template = args => {
       <Input
         {...args}
         onChange={(e)=>{setValue(e.target.value)}}
+        onBlur = {(e)=>{return e}}
         value={value}
       />
       <pre style={{ marginTop: 10 }}>
