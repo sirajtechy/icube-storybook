@@ -15,13 +15,41 @@ export default {
 
  
 const Template = args => {
+  const [value,setValue] = useState('')
+  const DailPadLogic =  (e)=>{
+    let Params = e.target.id
+    switch(Params){
+      case 'OK':
+        return true
+      case 'X' :
+      let RemoveOperation =  value.split("") 
+      RemoveOperation.pop();
+      return setValue(RemoveOperation.join(''))  
+      default :
+        return  setValue(prevArray => [...prevArray, Params].join(''))
+    }
+   
+  }
+  const inputOnChange = (e)=>{
+    if(!/^[0-9]+$/.test(e.target.value)){
+      setValue('')
+    }
+    else{
+  setValue(e.target.value)
+    }
+   }
   
   return (
     <>
-      <DailPadDesign />
+      <DailPadDesign  onClick={(e)=>DailPadLogic(e)}  onChange={(e)=>inputOnChange(e)} value={value}  {...args} />
+      <pre style={{ marginTop: 10 }}>
+        {JSON.stringify({ value }, null, 2)}
+      </pre>
     </>
   );
 };
 export const  DailPad = Template.bind({});
-DailPad.args = {};
+DailPad.args ={ type: 'text', placeholder:" " , id : "id" , name : "name" , className :"" , Borderless:true,
+ style :{backgroundColor:"white"} ,disabled:false , size: 0 , label:"User", error:false,Errormessage:"We are handle error"};
+ 
   

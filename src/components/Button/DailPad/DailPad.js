@@ -1,47 +1,20 @@
 import React , {useCallback, useState} from 'react'
 import './DailPad.css'
 import {Input} from '../Input/Input';
-export  const DailPadDesign = ()=> {
-  const [value,setValue] = useState('')
-   let DailpadNumber = [1,2,3,4,5,6,7,8,9,'X',0,'OK'] ; 
-   
-  const DailPadLogic =  (Params)=>{
-    switch(Params){
-      case 'OK':
-        return true
-      case 'X' :
-      let RemoveOperation =  value.split("") 
-      RemoveOperation.pop();
-      return setValue(RemoveOperation.join(''))  
-      default :
-        return  setValue(prevArray => [...prevArray, Params].join(''))
-    }
-   
-  }
- const inputOnChange = (e)=>{
-  if(!/^[0-9]+$/.test(e.target.value)){
-    setValue('')
-  }
-  else{
-setValue(e.target.value)
-  }
- }
-
+export  const DailPadDesign = (props)=> {
   
-   const FocusEvent = ( )=>{
-    console.log("onfocus")
-   }
-   const BlurEvent = ()=>{
-        console.log("blur")
-  }
+   let DailpadNumber = [1,2,3,4,5,6,7,8,9,'X',0,'OK'] ; 
+ 
  
   return (
     <div class="DialPadDesign">
-     <Input Borderless={true} type ="text" placeholder =" "  label={"Enter AuthCode"} onChange={(e)=>{inputOnChange(e)}} value={value}/>
+     <Input style={props.style} id={props.id} type= {props.type} name={props.name}  onKeyDown={props.onKeyDown} 
+               label={props.label}  Borderless={props.Borderless}   onBlur={props.onBlur}  maxLength={props.maxlength} size={props.size} disabled={props.disabled} placeholder={props.placeholder}
+               value ={props.value}  onChange={props.onChange} />
       <div class="grid-container">
         {
           DailpadNumber.map((data,index)=>{
-             return <div class="item" onFocus={()=>FocusEvent()} onBlur={()=>BlurEvent()}  onClick={()=>DailPadLogic(data)} id={data}>{data}</div>
+             return <div class="item"   onClick={props.onClick} id={data}>{data}</div>
           })
         }
 </div>
