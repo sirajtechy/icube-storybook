@@ -20,7 +20,7 @@ const Template = args => {
     let Params = e.target.id
     switch(Params){
       case 'OK':
-        return true
+        return onsubmit()
       case 'X' :
       let RemoveOperation =  value.split("") 
       RemoveOperation.pop();
@@ -29,6 +29,10 @@ const Template = args => {
         return  setValue(prevArray => [...prevArray, Params].join(''))
     }
    
+  }
+
+  onsubmit = ()=>{
+    console.log("submit")
   }
   const inputOnChange = (e)=>{
     if(!/^[0-9]+$/.test(e.target.value)){
@@ -41,7 +45,7 @@ const Template = args => {
   
   return (
     <>
-      <DailPadDesign  onClick={(e)=>DailPadLogic(e)}  onChange={(e)=>inputOnChange(e)} value={value}  {...args} />
+      <DailPadDesign  onClick={(e)=>DailPadLogic(e)} onSubmit={()=>onsubmit()} onChange={(e)=>inputOnChange(e)} value={value}  {...args} />
       <pre style={{ marginTop: 10 }}>
         {JSON.stringify({ value }, null, 2)}
       </pre>
