@@ -8,7 +8,7 @@ export const Input = (props) => {
               switch(props.type){
                     case "text" : 
                        rendercomponet = <div className={`${props.Borderless ?'disableBorder':'enableBorder'}`}> <div className="floating-label">
-                       <input className={`floating-input ${props.error ? 'InputErrorMsg':''}`}style={props.style} id={props.id} type= {props.type} name={props.name}  
+                       <input className={`floating-input ${props.error ? 'InputErrorMsg':''}`}style={props.style} id={props.id} type= {props.type} name={props.name}  onKeyDown={props.onKeyDown} 
                        value ={props.value} onBlur={props.onBlur} onChange={props.onChange} maxLength={props.maxlength} size={props.size} disabled={props.disabled} placeholder={props.placeholder} />
                        <span className="highlight"></span>
                        <label >{props.label}</label>
