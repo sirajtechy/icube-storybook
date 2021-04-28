@@ -1,5 +1,6 @@
 import React , {useState } from 'react';
 import {Input} from './Input';
+import { action } from "@storybook/addon-actions";
 
 export default {
     title: 'Form/Input',
@@ -20,8 +21,9 @@ const Template = args => {
     <>
       <Input
         {...args}
-        onChange={(e)=>{setValue(e.target.value)}}
-        onBlur = {(e)=>{return e}}
+        onChange={(e)=>{ action("Input onClick event: ")(e.target.value);
+        setValue(e.target.value)}}
+        onBlur = {(e)=>{action("Input onClick event: ")(e)}}
         value={value}
       />
       <pre style={{ marginTop: 10 }}>
